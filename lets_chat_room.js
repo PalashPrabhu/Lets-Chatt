@@ -17,7 +17,7 @@ var firebaseConfig = {
   function addUser(){
     user_name=document.getElementById("user_name").value;
    // localStorage.setItem("user_name", user_name);
-    window.location="kwitter_room.html"
+    window.location="lets_chat_room.html"
 }
      
   
@@ -37,7 +37,7 @@ var firebaseConfig = {
   
       localStorage.setItem("room_name", room_name);
       
-      window.location = "kwitter_page.html";
+      window.location = "lets_chat_page.html";
   }
   
   function getData() 
@@ -61,8 +61,8 @@ var firebaseConfig = {
          console.log(msg);
          name_with_tag = "<h4> "+ name1 +"<img class='user_tick' src='tick.png'></h4>"; 
          message_with_tag = "<h4 class='message_h4'>" + msg + "</h4>";
-         like_button ="<button class='btn btn-warning' id="+firebase_msg_id+" value="+like+" onclick='updateLike(this.id)'>";
-         span_with_tag = "<span class='glyphicon glyphicon-thumbs-up'>Like: "+ like +"</span></button><hr>";
+         like_button ="<button class='btn btn-warning' id="+firebase_msg_id+" onclick='updateLike(this.id)'>";
+         span_with_tag = "<span class='glyphicon glyphicon-thumbs-up'> </span></button><hr>";
          row = name_with_tag + message_with_tag +like_button + span_with_tag;
          document.getElementById("output").innerHTML += row;
         }
@@ -81,13 +81,13 @@ var firebaseConfig = {
   {
     console.log(name);
     localStorage.setItem("room_name", name);
-      window.location = "kwitter_page.html";
+      window.location = "lets_chat_page.html";
   }
   
   function logout() {
   localStorage.removeItem("user_name");
   localStorage.removeItem("room_name");
-      window.location = "kwitter.html";
+      window.location = "index.html";
   }
   room_name=localStorage.getItem("room_name");
   console.log(room_name);
